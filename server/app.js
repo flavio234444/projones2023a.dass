@@ -1,9 +1,9 @@
 // Helps to handle http errors
-import createError from 'http-errors'
+import createError from 'http-errors';
 // Import the Express Library
 import express from 'express';
 // Is a Core-Node library to manage system paths
-import path from 'path'
+import path from 'path';
 // Helps to parse client cookies
 import cookieParser from 'cookie-parser';
 // Library to log http communication

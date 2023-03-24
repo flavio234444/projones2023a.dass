@@ -12,14 +12,14 @@ router.get('/', (req, res, next) => {
 
 router.get('/author', (req, res) => {
   // Creating a View-Model
-  let author = {
+  const author = {
     "name": "Leonardo",
     "lastname": "Gonzalez",
     "twitter": "@Leogz",
     "job": "ITGAM"
   };
   // Sending the view-model to be rendered by a View
-  res.render('author', author);
-});
+  res.render('Author', author);
+})
 
 export default router;
