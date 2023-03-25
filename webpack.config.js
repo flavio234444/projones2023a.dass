@@ -4,6 +4,8 @@
 
 // Importing an file routing manager
 const path = require('path');
+// Importing plugin
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // We export a configuration object
 // that will be used by webpack
@@ -22,8 +24,8 @@ module.exports = {
     // 2.2 Output file name
     filename: "bundle.js"
   },
-   // Adding a module to webpack
-   module: {
+  // Adding a module to webpack
+  module: {
     rules: [
       {
 				// This section stablishes 
@@ -41,7 +43,7 @@ module.exports = {
                   {
                     'modules': false,
                     'useBuiltIns': 'usage',
-                    'targets': {"chrome": "80"},
+                    'targets': '> 0.25%, not dead',
                     'corejs': 3
                   }
                 ]
@@ -49,7 +51,15 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       }
     ]
-  }
+  },
+  plugins: [new MiniCssExtractPlugin({
+    // Archivo css de salida
+    filename: 'styles/app.css'
+  })]
 }
