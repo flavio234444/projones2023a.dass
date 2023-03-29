@@ -40,7 +40,7 @@ if (nodeEnviroment === 'develoment') {
      const bundler = webpack(webpackConfig); 
      //Enabling the webpaack middleware 
      app.use(WebpackDevMiddleware(bundler, {
-      publicPhat: webpackConfig.output.path
+      publicPhat: webpackConfig.output.publicPath
      }) );
 //Enabling the web pack Hm 
 app.use(WebpackHotMiddleare(bundle)); 
@@ -66,7 +66,7 @@ app.use(express.urlencoded({ extended: false }));
 // Parse client cookies into json
 app.use(cookieParser());
 // Set up the static file server
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Registering routes
 app.use('/', indexRouter);
