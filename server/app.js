@@ -27,14 +27,14 @@ const nodeEnviroment = process.env.NODE_env || 'production'
 //Decciding if we all webpack siddleware or not  
 if (nodeEnviroment === 'develoment') {
   //start Webpack dev server 
-  console.log("🎶Ejecutando en modo desarrollo");
+  console.log('🎶Ejecutando en modo desarrollo');
   //adding the key mode with its value "develomet" 
   webpackConfig.mode = nodeEnviroment; 
   //setting the port 
   webpackConfig.devServer.port = process.env.PORT;
   //setting up the hmr (hot mudula replacement ) 
   webpackConfig. entry = [ 
-    "webpack-hot-middleware/client?reloand=true&timeout=1000",
+    'webpack-hot-middleware/client?reloand=true&timeout=1000',
      webpackConfig.entry]; 
      //creatingthe bundler 
      const bundler = webpack(webpackConfig); 
