@@ -6,6 +6,7 @@
 const path = require('path');
 // Importing plugin
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Eslintplugin = require("eslint-wepack-plugin");
 
 
 
@@ -24,7 +25,9 @@ module.exports = {
     // of the project's static files
     path: path.resolve(__dirname, "public"),
     // 2.2 Output file name
-    filename: "bundle.js"
+    filename: "bundle.js",
+    // 2.3
+    publicPath: '/'
   },
   // 3. Configuring the development server
   // The development server serves the packaged files
@@ -74,5 +77,7 @@ module.exports = {
   plugins: [new MiniCssExtractPlugin({
     // Archivo css de salida
     filename: 'styles/app.css'
-  })]
+  }),
+  new Eslintplugin()
+]
 }
