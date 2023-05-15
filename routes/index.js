@@ -1,0 +1,3 @@
+"use strict";var _express=_interopRequireDefault(require("express"));Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}const{Router}=_express.default,router=Router();router.get("/",(req,res)=>{let icon=["\u2B50","\uD83E\uDD16","\uD83C\uDF49"][Math.floor(3*Math.random())];res.render("index",{title:"DWPCII-2023A",icon})}),router.get("/author",(req,res)=>{// Creating a View-Model
+// Sending the view-model to be rendered by a View
+res.render("Author",{name:"Leonardo",lastname:"Gonzalez",twitter:"@Leogz",job:"ITGAM"})});var _default=router;exports.default=_default;
